@@ -200,7 +200,7 @@
     "_id": "842054c0-2491-11e9-ab18-ab5b73f741ba",
     "_type": "search",
     "_source": {
-      "title": "Smoke tests errors in Staging namespace",
+      "title": "Panics in Staging namespace",
       "description": "",
       "hits": 0,
       "columns": [
@@ -213,7 +213,31 @@
       ],
       "version": 1,
       "kibanaSavedObjectMeta": {
-        "searchSourceJSON": "{\"index\":\"71e16890-1414-11e9-a7c8-0be6d4eb2378\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"log: \\\"ERROR\\\" AND log: \\\"swarm-smoke\\\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"71e16890-1414-11e9-a7c8-0be6d4eb2378\",\"type\":\"phrase\",\"key\":\"kubernetes.namespace_name\",\"value\":\"staging\",\"params\":{\"query\":\"staging\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"kubernetes.namespace_name\":{\"query\":\"staging\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+        "searchSourceJSON": "{\"index\":\"71e16890-1414-11e9-a7c8-0be6d4eb2378\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"log: \\\"panic\\\"\",\"language\":\"lucene\"},\"filter\":[{\"meta\":{\"negate\":false,\"index\":\"71e16890-1414-11e9-a7c8-0be6d4eb2378\",\"type\":\"phrase\",\"key\":\"kubernetes.namespace_name\",\"value\":\"staging\",\"params\":{\"query\":\"staging\",\"type\":\"phrase\"},\"disabled\":false,\"alias\":null},\"query\":{\"match\":{\"kubernetes.namespace_name\":{\"query\":\"staging\",\"type\":\"phrase\"}}},\"$state\":{\"store\":\"appState\"}}]}"
+      }
+    },
+    "_meta": {
+      "savedObjectVersion": 2
+    }
+  },
+  {
+    "_id": "6e2ae4f0-2496-11e9-ab18-ab5b73f741ba",
+    "_type": "search",
+    "_source": {
+      "title": "Smoke test errors in Staging namespace",
+      "description": "",
+      "hits": 0,
+      "columns": [
+        "log",
+        "kubernetes.namespace_name"
+      ],
+      "sort": [
+        "@timestamp",
+        "desc"
+      ],
+      "version": 1,
+      "kibanaSavedObjectMeta": {
+        "searchSourceJSON": "{\"index\":\"71e16890-1414-11e9-a7c8-0be6d4eb2378\",\"highlightAll\":true,\"version\":true,\"query\":{\"query\":\"log: \\\"ERROR\\\" AND log: \\\"swarm-smoke\\\"\",\"language\":\"lucene\"},\"filter\":[{\"$state\":{\"store\":\"appState\"},\"meta\":{\"alias\":null,\"disabled\":false,\"index\":\"71e16890-1414-11e9-a7c8-0be6d4eb2378\",\"key\":\"kubernetes.namespace_name\",\"negate\":false,\"params\":{\"query\":\"staging\",\"type\":\"phrase\"},\"type\":\"phrase\",\"value\":\"staging\"},\"query\":{\"match\":{\"kubernetes.namespace_name\":{\"query\":\"staging\",\"type\":\"phrase\"}}}}]}"
       }
     },
     "_meta": {
